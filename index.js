@@ -261,6 +261,11 @@ function animate(){
         }else if(keys.h.pressed && lastKey ==='h'){
             //deactivate current animation loop
             window.cancelAnimationFrame(animationId);
+
+            audio.Map.stop();
+            audio.initBattle.play();
+            audio.battle.play();
+
             battle.initiated = true;
             gsap.to('#overlappingDiv',{
                 opacity: 1,
@@ -341,6 +346,10 @@ function animateBattle(){
     witch.draw();
     knight.draw();
 
+    gsap.to('#attackbutton', {
+        PointerEvents: "visible"
+    })
+
     gsap.to('#demonhphtml', {
         opacity:1
     })
@@ -375,7 +384,9 @@ document.querySelectorAll('button').forEach((button) =>{
              damage: 20
          },
         recipient: witch
+        
         })
+        audio.hit.play();
 
         setTimeout(()=>{
             witch.attack({ 
@@ -391,11 +402,13 @@ document.querySelectorAll('button').forEach((button) =>{
        
 
         setTimeout(()=>{
+             audio.hit2.play();
             demonImage.src = './assetsFolder/demonSlime1/demonAttack1.png';
             knightImage.src = './assetsFolder/Meow Knight/knightHurt1.png';
         }, 4000)
         
         setTimeout(()=>{
+           
             knightImage.src = './assetsFolder/Meow Knight/knightFix1.png';
             demonImage.src = './assetsFolder/demonSlime1/demonIdleFix.png';
         }, 6000)
@@ -414,6 +427,8 @@ document.querySelectorAll('button').forEach((button) =>{
                 onComplete: () => {
                     cancelAnimationFrame(battleAnimationId)
                     animate()
+                    audio.battle.stop();
+                    audio.Map.play();
                     battle.initiated = false;
                     gsap.to('#overlappingDiv',{
                         opacity:0
@@ -504,3 +519,11 @@ window.addEventListener('keyup',(e)=>{
 })
 
 
+let clicked = false;
+addEventListener('click', ()=>{
+    if(!clicked){
+        audio.Map.play()
+        clicked = true
+    }
+    
+})

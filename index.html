@@ -19,7 +19,15 @@
 </style>
 </head>
 
+<div style="color: white; position: absolute;top: 70%;left: 20%;">
+    <p>Project Created by Bryan Diaz-Cruz<br>
+        Assets used are from:<br> 
+        https://9e0.itch.io/ <br>
+        https://enbermudasart.itch.io/ <br>
 
+
+    </p>
+</div>
 
 
 
@@ -72,12 +80,13 @@
     <div id="dialogueBox1" style="position: absolute; top:0;right: 0;bottom: 0;left: 0; 
     background-color: white; padding: 12px;
     display: block; opacity: 1;">Welcome to the start of the game.<br>
+    Click the screen with your mouse to begin. <br>
     Explore using "w,a,s,d" keys. <br>
     To continue press "h" key.</div>
 
     <div id="dialogueBox2" style="position: absolute; top:0;right: 0;bottom: 0;left: 0; 
     background-color: white; padding: 12px;
-    display: block; opacity: 1;">Congratulations you beat the invader!<br>
+    display: block; opacity: 0;">Congratulations you beat the invader!<br>
     You have finished the game! <br>
     Congratulations!</div>
 
@@ -90,7 +99,7 @@
 
 
 
-        <div id="attackbutton" style="width: 100%; display: grid; opacity:0;">
+        <div id="attackbutton" style="width: 100%; display: grid; opacity:0;pointer-events: auto;">
             <button>Attack</button>
         </div>
         
@@ -103,7 +112,9 @@
 
 
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+ integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js" 
 integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g==" 
@@ -111,4 +122,5 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="data/collisions.js"></script>
 <script src="classes.js"></script>
+<script src="audio.js"></script>
 <script src="index.js"></script>
