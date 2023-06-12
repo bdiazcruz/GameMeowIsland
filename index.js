@@ -157,6 +157,12 @@ function animate(){
 
 
         let moving = true;
+
+
+
+        
+
+
     
 
         player.animate = false;
@@ -334,6 +340,26 @@ function animateBattle(){
     battleBackground.draw();
     witch.draw();
     knight.draw();
+
+    gsap.to('#demonhphtml', {
+        opacity:1
+    })
+   
+    gsap.to('#herohphtml', {
+        opacity:1
+    })
+
+    gsap.to('#dialogueBox1', {
+        opacity:0
+    })
+
+    gsap.to('#diawoman', {
+        opacity:0
+    })
+    gsap.to('#attackbutton', {
+        opacity:1
+    })
+
 }
 
 

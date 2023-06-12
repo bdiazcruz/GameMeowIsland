@@ -33,41 +33,55 @@
 
 
 <!--demonn hp-->
-        <div style="background-color: white; position: absolute; width: 250px; 
+    <div id="demonhphtml" style="background-color: white; position: absolute; width: 250px; 
         height: 80px;
         left: 50px; top: 50px; border: 4px black solid;
-        padding: 12px;">
+        padding: 12px; opacity: 0;">
     
         <h1 style="font-size: 16px;">Demon</h1>
         <div style="position:relative;">
             <div style="height: 5px; background-color: #ccc; margin-top: 10px;"></div>
             <div id="enemyHP" style="height: 5px; background-color: green; position: absolute; top: 0; left: 0; right: 0;"></div>
         </div>
-        </div>
+    </div>
         
 <!--hero hp-->
 
-        <div style="background-color: white; position: absolute; width: 250px; 
+    <div id="herohphtml" style="background-color: white; position: absolute; width: 250px; 
         height: 100px;
         right: 50px; top: 330px; border: 4px black solid;
-        padding: 12px;">
+        padding: 12px; opacity: 0;">
     
         <h1 style="font-size: 16px;">You</h1>
         <div style="position:relative;">
             <div style="height: 5px; background-color: #ccc; margin-top: 10px;"></div>
             <div id="heroHP" style="height: 5px; background-color: green; position: absolute; top: 0; left: 0; right: 0;"></div>
         </div>
-        </div>
+    </div>
         
         
     <canvas></canvas>
 
-    <div style="background-color: white; height: 140px;
+    <div id="lowerlog" style="background-color: white; height: 140px;
         position: absolute; bottom:0; left: 0; right: 0;
         border-top: 4px black solid;
-        display: flex;">
+        display: flex; opacity: 1;">
 
-        <div style="width: 100%; display: grid;">
+
+    <div id="dialogueBox1" style="position: absolute; top:0;right: 0;bottom: 0;left: 0; 
+    background-color: white; padding: 12px;
+    display: block; opacity: 1;">Welcome to the start of the game.<br>
+    Explore using "w,a,s,d" keys. <br>
+    To continue press "h" key.</div>
+
+    <div id="diaWoman" style ="position: absolute; right:0; display: block; opacity:1;">
+        <img src="./assetsFolder/pixelWoman.png">
+    </div>
+
+
+
+
+        <div id="attackbutton" style="width: 100%; display: grid; opacity:0;">
             <button>Attack</button>
         </div>
         
