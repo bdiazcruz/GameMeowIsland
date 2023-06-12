@@ -4,7 +4,7 @@ const c = canvas.getContext('2d');
 
 
 
-
+let attackCount = 0;
 
 
 
@@ -333,10 +333,10 @@ const knight = new Sprite3({
 })
 
 
-
+let battleAnimationId
 
 function animateBattle(){
-    window.requestAnimationFrame(animateBattle);
+    battleAnimationId= window.requestAnimationFrame(animateBattle);
     battleBackground.draw();
     witch.draw();
     knight.draw();
@@ -399,6 +399,54 @@ document.querySelectorAll('button').forEach((button) =>{
             knightImage.src = './assetsFolder/Meow Knight/knightFix1.png';
             demonImage.src = './assetsFolder/demonSlime1/demonIdleFix.png';
         }, 6000)
+
+
+
+
+
+        attackCount++;
+        console.log(attackCount);
+
+
+        if(attackCount>5){
+            gsap.to('#overlappingDiv',{
+                opacity:1,
+                onComplete: () => {
+                    cancelAnimationFrame(battleAnimationId)
+                    animate()
+                    battle.initiated = false;
+                    gsap.to('#overlappingDiv',{
+                        opacity:0
+                    })
+                    gsap.to('#demonhphtml', {
+                        opacity:0
+                    })
+                   
+                    gsap.to('#herohphtml', {
+                        opacity:0
+                    })
+                
+                    gsap.to('#dialogueBox2', {
+                        opacity:1
+                    })
+                
+                    gsap.to('#diawoman', {
+                        opacity:1
+                    })
+                    gsap.to('#attackbutton', {
+                        opacity:0
+                    })
+                }
+            })
+           
+
+
+
+
+
+
+        }
+
 
 
 
